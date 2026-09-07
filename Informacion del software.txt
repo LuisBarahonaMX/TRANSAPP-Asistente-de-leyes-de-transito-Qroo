@@ -1,0 +1,139 @@
+**Documentación del Proyecto: Asistente de Ayuda Legal en Tránsito Vial**
+
+---
+
+### 1. Introducción
+
+Este documento describe de forma detallada el desarrollo de un **asistente legal de tránsito vial**, el cual permite a los usuarios consultar dudas sobre leyes de tránsito mediante **voz o texto**, y recibir respuestas claras, fundamentadas y habladas. El objetivo principal fue desarrollar una **aplicación web responsiva y móvil**, construida desde cero con tecnologías modernas de frontend y backend, incluyendo una arquitectura de recuperación aumentada por generación (**RAG**) para mejorar las respuestas de la IA.
+
+---
+
+### 2. Tecnologías utilizadas
+
+- **Frontend**: React + Vite
+- **Backend**: Node.js + Express
+- **API IA**: OpenAI SDK v4
+- **Embeddings**: `text-embedding-ada-002`
+- **Modelo de chat**: `gpt-3.5-turbo`
+- **Persistencia**: Memoria RAM con embeddings precalculados
+- **Reconocimiento de voz**: Web Speech API (SpeechRecognition)
+- **Síntesis de voz**: Web Speech API (SpeechSynthesis)
+
+---
+
+### 3. Estructura del Proyecto
+
+```
+asistente-ayudatransito/
+├── public/
+│   ├── transito_raw.txt       # Texto fuente de leyes
+│   ├── manifest.json          # PWA manifest
+│   └── icon-192.png, icon-512.png
+├── src/
+│   └── App.jsx                # Interfaz y lógica React
+├── server.js                  # API Express + embeddings + RAG
+├── .env                       # Clave OPENAI_API_KEY
+├── firebase.json              # Configuración Firebase Hosting
+├── vite.config.js             # Plugin de PWA + React
+└── package.json               # Scripts y dependencias
+```
+
+---
+
+### 4. Desarrollo del Backend (server.js)
+
+El backend realiza las siguientes tareas:
+
+1. **Carga y fragmentación de documentos**: lee `public/transito_raw.txt` y divide el contenido en fragmentos de 1000 caracteres con 200 de superposición para mantener coherencia entre secciones.
+
+2. **Generación de embeddings**: se usan `openai.embeddings.create()` para generar representaciones numéricas de cada fragmento legal.
+
+3. **Consulta por pregunta**: cuando el usuario pregunta algo, se genera su embedding, se calcula la similitud coseno con cada fragmento y se toman los 5 más relevantes.
+
+4. **Respuesta con contexto**: esos 5 fragmentos se concatenan como contexto para una llamada al modelo `gpt-3.5-turbo`, que responde de forma precisa y contextualizada.
+
+5. **Respuesta JSON**: se devuelve el texto generado junto a las fuentes utilizadas (nombre del archivo fragmentado).
+
+---
+
+### 5. Desarrollo del Frontend (App.jsx)
+
+- **Entrada de texto**: el usuario puede escribir su pregunta.
+- **Entrada por voz**: se usa la Web Speech API para convertir voz en texto.
+- **Envío al backend**: con `fetch('/api/chat')` se envía la pregunta al backend.
+- **Visualización de respuesta**: se muestra la respuesta textual y las fuentes utilizadas.
+- **Lectura por voz**: la respuesta se lee en voz alta usando `SpeechSynthesisUtterance`.
+
+---
+
+### 6. Configuración como PWA
+
+Se utiliza el plugin `vite-plugin-pwa` para:
+
+- Agregar un `manifest.json` para definir la apariencia de instalación.
+- Registrar un `serviceWorker` para hacerla instalable y offline-ready.
+- Permitir a usuarios móviles agregar la app a su pantalla de inicio.
+
+---
+
+### 7. Implementación de RAG (Retrieval-Augmented Generation)
+
+Este método potencia las respuestas del modelo GPT con conocimiento externo:
+
+- **Recuperación**: se buscan los fragmentos más cercanos semánticamente a la pregunta.
+- **Generación**: el modelo genera una respuesta con esos fragmentos como contexto.
+
+Ventajas:
+- Evita alucinaciones del modelo.
+- Permite actualizar el corpus de leyes sin reentrenar.
+- Mejora la transparencia al mostrar las fuentes.
+
+---
+
+### 8. Uso y despliegue local
+
+**Terminal 1** (Backend):
+```
+cd asistente-ayudatransito
+node server.js
+```
+
+**Terminal 2** (Frontend):
+```
+npm run dev
+```
+
+Abrir en navegador:
+```
+http://localhost:3000
+```
+
+---
+
+### 9. Despliegue en Firebase Hosting
+
+1. Ejecutar:
+```
+npm run build
+firebase login
+firebase init hosting
+y
+
+```
+2. El hosting quedará disponible vía HTTPS.
+
+---
+
+### 10. Conclusión
+
+Este proyecto demuestra cómo integrar IA avanzada con una interfaz simple y accesible. El uso de RAG mejora considerablemente la utilidad legal del sistema. Además, el enfoque de PWA permite su uso en dispositivos móviles sin necesidad de tiendas de apps. Puede expandirse con autenticación, soporte para otras leyes y almacenamiento en nube para retroalimentación constante del corpus legal.
+
+---
+
+### 11. Futuras mejoras
+
+- Indexación de múltiples documentos PDF automáticamente.
+- Almacenamiento en base de datos de consultas más frecuentes.
+- Dashboard de análisis para supervisión legal.
+- Mejora de UX móvil con notificaciones push y temas accesibles.
+

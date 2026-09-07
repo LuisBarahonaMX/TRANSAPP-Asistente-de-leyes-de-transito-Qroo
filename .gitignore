@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+functions/node_modules/
+functions/.env
+functions/.env.*
+.firebase/
+.firebase-cache/
+.vscode/
+.DS_Store
+*.log
+serviceAccountKey.json
+*service-account*.json
