@@ -1,7 +1,7 @@
 # TRANSAPP
 
 <p align="center">
-  <img src="assets/transapp_overview.png"
+  <img src="assets/imagenportada.png"
        alt="TRANSAPP intelligent traffic-law assistant"
        width="100%">
 </p>
@@ -87,6 +87,7 @@ TRANSAPP separates the frontend interface from the backend and AI-processing log
 ## Technologies
 
 ### Frontend
+
 - React
 - Vite
 - JavaScript
@@ -94,17 +95,20 @@ TRANSAPP separates the frontend interface from the backend and AI-processing log
 - CSS
 
 ### Backend
+
 - Node.js
 - Express
 - REST API
 
 ### Artificial Intelligence
+
 - Large Language Models
 - Prompt Engineering
 - Context-based question answering
 - Retrieval-Augmented Generation concepts
 
 ### Development
+
 - Git
 - GitHub
 - npm
@@ -143,6 +147,8 @@ What are the consequences of committing a traffic violation?
 What responsibilities does a driver have according to traffic regulations?
 ```
 
+TRANSAPP processes the question and returns guidance based on the regulatory information available to the system.
+
 ---
 
 ## Project Purpose
@@ -171,10 +177,14 @@ The goal is not to replace official authorities or legal professionals, but to p
 TRANSAPP-Asistente-de-leyes-de-transito-Qroo/
 │
 ├── src/
+│
 ├── public/
+│
 ├── asistente-ayudatransito/
+│
 ├── assets/
-│   └── transapp_overview.png
+│   └── imagenportada.png
+│
 ├── server.js
 ├── package.json
 ├── vite.config.js
@@ -182,14 +192,33 @@ TRANSAPP-Asistente-de-leyes-de-transito-Qroo/
 └── README.md
 ```
 
+The exact structure may evolve as the project continues to be organized and improved.
+
 ---
 
 ## Installation
 
+Clone the repository:
+
 ```bash
 git clone https://github.com/LuisBarahonaMX/TRANSAPP-Asistente-de-leyes-de-transito-Qroo.git
+```
+
+Enter the project:
+
+```bash
 cd TRANSAPP-Asistente-de-leyes-de-transito-Qroo
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Run the development environment:
+
+```bash
 npm run dev
 ```
 
@@ -204,6 +233,8 @@ node server.js
 ## Environment Variables
 
 Private API credentials should never be stored directly in the repository.
+
+Use environment variables or a local `.env` file.
 
 Example:
 
@@ -227,11 +258,13 @@ It does not replace:
 - Administrative decisions
 - Formal legal advice
 
-Important legal matters should always be verified against current official sources.
+Traffic regulations can change over time, so important legal matters should always be verified against current official sources.
 
 ---
 
 ## Limitations
+
+The current version has several limitations:
 
 - Responses depend on the quality of the available regulatory context.
 - Legal information may require periodic updates.
@@ -243,6 +276,8 @@ Important legal matters should always be verified against current official sourc
 
 ## Future Development
 
+Planned improvements include:
+
 - Expanded traffic-law corpus
 - Better legal-document retrieval
 - Improved RAG architecture
@@ -252,6 +287,20 @@ Important legal matters should always be verified against current official sourc
 - Mobile-oriented interface
 - Improved interface accessibility
 - Additional road-safety information
+
+---
+
+## Potential Applications
+
+TRANSAPP can serve as a foundation for intelligent assistants related to:
+
+- Traffic regulations
+- Road safety
+- Driver education
+- Mobility
+- Public legal information
+- Government services
+- Regulatory document consultation
 
 ---
 
