@@ -87,7 +87,6 @@ TRANSAPP separates the frontend interface from the backend and AI-processing log
 ## Technologies
 
 ### Frontend
-
 - React
 - Vite
 - JavaScript
@@ -95,20 +94,17 @@ TRANSAPP separates the frontend interface from the backend and AI-processing log
 - CSS
 
 ### Backend
-
 - Node.js
 - Express
 - REST API
 
 ### Artificial Intelligence
-
 - Large Language Models
 - Prompt Engineering
 - Context-based question answering
 - Retrieval-Augmented Generation concepts
 
 ### Development
-
 - Git
 - GitHub
 - npm
@@ -131,8 +127,6 @@ TRANSAPP separates the frontend interface from the backend and AI-processing log
 
 ## Example Questions
 
-Users may ask questions such as:
-
 ```text
 What happens if I drive under the influence of alcohol?
 ```
@@ -148,8 +142,6 @@ What are the consequences of committing a traffic violation?
 ```text
 What responsibilities does a driver have according to traffic regulations?
 ```
-
-TRANSAPP processes the question and returns guidance based on the regulatory information available to the system.
 
 ---
 
@@ -179,50 +171,25 @@ The goal is not to replace official authorities or legal professionals, but to p
 TRANSAPP-Asistente-de-leyes-de-transito-Qroo/
 │
 ├── src/
-│   └── Application source code
-│
 ├── public/
-│   └── Static resources
-│
+├── asistente-ayudatransito/
 ├── assets/
-│   └── Project images and README resources
-│
+│   └── transapp_overview.png
 ├── server.js
-│
 ├── package.json
 ├── vite.config.js
 ├── eslint.config.js
-│
 └── README.md
 ```
-
-The exact structure may evolve as the project continues to be organized and improved.
 
 ---
 
 ## Installation
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/LuisBarahonaMX/TRANSAPP-Asistente-de-leyes-de-transito-Qroo.git
-```
-
-Enter the project:
-
-```bash
 cd TRANSAPP-Asistente-de-leyes-de-transito-Qroo
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Run the development environment:
-
-```bash
 npm run dev
 ```
 
@@ -238,15 +205,13 @@ node server.js
 
 Private API credentials should never be stored directly in the repository.
 
-Use environment variables or a local `.env` file.
-
 Example:
 
 ```text
 OPENAI_API_KEY=your_api_key
 ```
 
-The `.env` file should remain excluded from Git.
+Keep `.env` files excluded from Git.
 
 ---
 
@@ -262,13 +227,11 @@ It does not replace:
 - Administrative decisions
 - Formal legal advice
 
-Traffic regulations can change over time, so important legal matters should always be verified against current official sources.
+Important legal matters should always be verified against current official sources.
 
 ---
 
 ## Limitations
-
-The current version has several limitations:
 
 - Responses depend on the quality of the available regulatory context.
 - Legal information may require periodic updates.
@@ -280,8 +243,6 @@ The current version has several limitations:
 
 ## Future Development
 
-Planned improvements include:
-
 - Expanded traffic-law corpus
 - Better legal-document retrieval
 - Improved RAG architecture
@@ -291,20 +252,6 @@ Planned improvements include:
 - Mobile-oriented interface
 - Improved interface accessibility
 - Additional road-safety information
-
----
-
-## Potential Applications
-
-TRANSAPP can serve as a foundation for intelligent assistants related to:
-
-- Traffic regulations
-- Road safety
-- Driver education
-- Mobility
-- Public legal information
-- Government services
-- Regulatory document consultation
 
 ---
 
@@ -335,8 +282,7 @@ Data and Organizational Intelligence Engineering
 Universidad del Caribe  
 Quintana Roo, Mexico
 
-GitHub:
-
+GitHub:  
 https://github.com/LuisBarahonaMX
 
 ---
