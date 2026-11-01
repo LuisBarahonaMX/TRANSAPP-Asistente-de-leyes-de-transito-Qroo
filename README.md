@@ -1,40 +1,42 @@
-# BuscaQroo
+# TRANSAPP
 
 <p align="center">
-  <img src="assets/buscaqroo_overview.png"
-       alt="BuscaQroo intelligent assistant"
+  <img src="assets/transapp_overview.png"
+       alt="TRANSAPP intelligent traffic-law assistant"
        width="100%">
 </p>
 
 <p align="center">
-  <strong>Intelligent assistant for public and institutional information in Quintana Roo, Mexico.</strong>
+  <strong>Intelligent assistant for understanding traffic regulations in Quintana Roo, Mexico.</strong>
 </p>
 
 ---
 
-## About BuscaQroo
+## About TRANSAPP
 
-**BuscaQroo** is a web-based intelligent assistant designed to help citizens find public and institutional information in the state of Quintana Roo, Mexico.
+**TRANSAPP** is an artificial intelligence web assistant designed to make traffic regulations and road-safety information easier to understand and consult.
 
-The platform provides a conversational interface that helps users identify the appropriate institution, agency, public service or official resource according to their needs.
+The project allows users to ask questions in natural language about traffic rules in Quintana Roo, Mexico, and receive simplified guidance based on the available regulatory information.
 
-Instead of manually searching through multiple government websites, directories and documents, users can describe what they need and receive structured guidance toward the most relevant source.
+Instead of manually searching through long legal documents, TRANSAPP provides a conversational interface that helps users identify relevant traffic rules, responsibilities and regulations.
 
 ---
 
 ## Main Objective
 
-BuscaQroo aims to simplify access to public information by connecting citizens with:
+The main objective of TRANSAPP is to improve access to traffic-law information through artificial intelligence.
 
-- Government institutions
-- Public services
-- Administrative procedures
-- Institutional directories
-- Official websites
-- Citizen assistance resources
-- Health and public-service information
+The assistant can support queries related to:
 
-The project focuses on making institutional information easier to understand and access through artificial intelligence.
+- Traffic regulations
+- Driver responsibilities
+- Road-safety rules
+- Infractions and penalties
+- Vehicle requirements
+- Driving under the influence of alcohol or drugs
+- Circulation rules
+- Mobility regulations
+- General legal information related to road use
 
 ---
 
@@ -42,74 +44,43 @@ The project focuses on making institutional information easier to understand and
 
 ```text
 User Question
-     ↓
+      ↓
 Web Interface
-     ↓
+      ↓
 Backend / API
-     ↓
+      ↓
 Prompt Processing
-     ↓
-Institutional Knowledge Base
-     ↓
+      ↓
+Traffic Regulation Context
+      ↓
 AI Model
-     ↓
-Structured Response
-     ↓
-Official Institution / Resource
+      ↓
+Simplified Response
 ```
 
-The assistant processes the user's request and uses institutional information to guide the user toward an appropriate service or organization.
+The system receives a user question, analyzes the available regulatory context and generates an easier-to-understand response.
 
 ---
 
 ## Architecture
 
-BuscaQroo follows a modular web architecture:
-
 ```text
 Frontend
 React + Vite
-     ↓
-API Requests
-     ↓
-Backend / Firebase Functions
-     ↓
-Prompt + Retrieval Logic
-     ↓
-Institutional Data
-     ↓
-AI Model
-     ↓
-Response
+      ↓
+HTTP / API Request
+      ↓
+Backend
+Node.js + Express
+      ↓
+Traffic-law context
+      ↓
+AI model
+      ↓
+Structured response
 ```
 
-### Main components
-
-```text
-buscaqroo/
-│
-├── frontend/
-│   └── Web user interface
-│
-├── backend/
-│   └── Backend services and API logic
-│
-├── functions/
-│   └── Firebase Cloud Functions
-│
-├── data/
-│   └── Institutional information and structured data
-│
-├── prompts/
-│   └── Prompt templates and assistant instructions
-│
-├── assets/
-│   └── README images and visual documentation
-│
-├── firebase.json
-├── .firebaserc
-└── README.md
-```
+TRANSAPP separates the frontend interface from the backend and AI-processing logic, allowing each component to evolve independently.
 
 ---
 
@@ -129,87 +100,103 @@ buscaqroo/
 - Express
 - REST API
 
-### Cloud
-
-- Firebase
-- Firebase Hosting
-- Firebase Functions
-- Firestore
-
 ### Artificial Intelligence
 
 - Large Language Models
 - Prompt Engineering
+- Context-based question answering
 - Retrieval-Augmented Generation concepts
-- Structured institutional context
+
+### Development
+
+- Git
+- GitHub
+- npm
+- ESLint
 
 ---
 
 ## Main Features
 
-- Conversational citizen assistance
-- Institutional information search
-- Public-service guidance
-- Government agency discovery
-- Official resource recommendations
-- Structured responses
-- Centralized institutional knowledge
+- Natural-language interaction
+- Traffic-law consultation
+- Simplified regulatory explanations
+- Road-safety information
 - Web-based access
+- Structured responses
+- Centralized traffic-regulation context
+- AI-assisted information retrieval
 
 ---
 
-## Example Use Case
+## Example Questions
 
-A citizen may ask:
-
-```text
-Where should I go to complete a government procedure?
-```
-
-or:
+Users may ask questions such as:
 
 ```text
-Which institution can help me with this public service?
+What happens if I drive under the influence of alcohol?
 ```
 
-BuscaQroo processes the request and returns information about the most relevant institution or resource.
+```text
+What documents should I carry while driving?
+```
+
+```text
+What are the consequences of committing a traffic violation?
+```
+
+```text
+What responsibilities does a driver have according to traffic regulations?
+```
+
+TRANSAPP processes the question and returns guidance based on the regulatory information available to the system.
 
 ---
 
 ## Project Purpose
 
-Public information is often distributed across many websites, documents and institutions.
+Traffic regulations are often difficult to consult because they are written in formal legal language and distributed across extensive documents.
 
-BuscaQroo explores how artificial intelligence can help organize this information and make it more accessible through natural-language interaction.
-
-The project seeks to reduce:
+TRANSAPP explores how artificial intelligence can make this information easier to access.
 
 ```text
-Search time
-     ↓
-Institutional confusion
-     ↓
-Navigation between multiple websites
-     ↓
-Difficulty identifying the correct agency
+User question
+      ↓
+Relevant regulation
+      ↓
+AI interpretation
+      ↓
+Simplified explanation
 ```
 
-while improving access to official information.
+The goal is not to replace official authorities or legal professionals, but to provide an accessible technological tool for consulting traffic information.
 
 ---
 
 ## Repository Structure
 
 ```text
-backend/
-data/
-frontend/
-functions/
-prompts/
-assets/
+TRANSAPP-Asistente-de-leyes-de-transito-Qroo/
+│
+├── src/
+│   └── Application source code
+│
+├── public/
+│   └── Static resources
+│
+├── assets/
+│   └── Project images and README resources
+│
+├── server.js
+│
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+│
+└── README.md
 ```
 
-Each directory represents an independent component of the BuscaQroo architecture.
+The exact structure may evolve as the project continues to be organized and improved.
 
 ---
 
@@ -218,39 +205,40 @@ Each directory represents an independent component of the BuscaQroo architecture
 Clone the repository:
 
 ```bash
-git clone https://github.com/LuisBarahonaMX/buscaqroo.git
-cd buscaqroo
+git clone https://github.com/LuisBarahonaMX/TRANSAPP-Asistente-de-leyes-de-transito-Qroo.git
 ```
 
-Install the dependencies of each project component according to its corresponding `package.json`.
-
-Example:
+Enter the project:
 
 ```bash
-cd frontend
+cd TRANSAPP-Asistente-de-leyes-de-transito-Qroo
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Then:
+Run the development environment:
 
 ```bash
 npm run dev
 ```
 
-For backend or Firebase Functions:
+If the backend is executed separately:
 
 ```bash
-cd ../functions
-npm install
+node server.js
 ```
 
 ---
 
 ## Environment Variables
 
-API credentials and private configuration should never be committed directly to GitHub.
+Private API credentials should never be stored directly in the repository.
 
-Use environment variables or `.env` files.
+Use environment variables or a local `.env` file.
 
 Example:
 
@@ -258,7 +246,35 @@ Example:
 OPENAI_API_KEY=your_api_key
 ```
 
-Add private environment files to `.gitignore`.
+The `.env` file should remain excluded from Git.
+
+---
+
+## Responsible Use
+
+TRANSAPP is an informational and educational support tool.
+
+It does not replace:
+
+- Official traffic authorities
+- Legal professionals
+- Official regulations
+- Administrative decisions
+- Formal legal advice
+
+Traffic regulations can change over time, so important legal matters should always be verified against current official sources.
+
+---
+
+## Limitations
+
+The current version has several limitations:
+
+- Responses depend on the quality of the available regulatory context.
+- Legal information may require periodic updates.
+- Natural-language interpretation can introduce ambiguity.
+- The assistant should not be treated as an authoritative legal source.
+- Improved source traceability is still desirable.
 
 ---
 
@@ -266,28 +282,29 @@ Add private environment files to `.gitignore`.
 
 Planned improvements include:
 
+- Expanded traffic-law corpus
+- Better legal-document retrieval
+- Improved RAG architecture
+- Source citations in responses
+- Better traceability to specific regulations
 - Query history
-- Administrative dashboard
-- Usage analytics
-- Expansion of institutional information
-- Improved retrieval mechanisms
-- Better source traceability
-- Additional public-service domains
-- More robust RAG architecture
+- Mobile-oriented interface
+- Improved interface accessibility
+- Additional road-safety information
 
 ---
 
-## Applications
+## Potential Applications
 
-BuscaQroo can serve as a foundation for intelligent public-information systems in areas such as:
+TRANSAPP can serve as a foundation for intelligent assistants related to:
 
-- Government services
-- Public health
-- Education
+- Traffic regulations
+- Road safety
+- Driver education
 - Mobility
-- Administrative procedures
-- Citizen support
-- Institutional directories
+- Public legal information
+- Government services
+- Regulatory document consultation
 
 ---
 
@@ -295,16 +312,17 @@ BuscaQroo can serve as a foundation for intelligent public-information systems i
 
 ```text
 [✓] Web interface
-[✓] Backend architecture
-[✓] Institutional data integration
-[✓] Firebase infrastructure
-[✓] Conversational assistant
+[✓] React + Vite frontend
+[✓] Backend integration
+[✓] Traffic-law assistant
+[✓] Natural-language interaction
+[✓] Regulatory context integration
 
-[→] Extended institutional knowledge
-[→] Query history
-[→] Administrative dashboard
-[→] Analytics
-[→] Improved retrieval and traceability
+[→] Expanded traffic-law corpus
+[→] Improved legal retrieval
+[→] Source citations
+[→] Better RAG architecture
+[→] Mobile-oriented interface
 ```
 
 ---
@@ -325,10 +343,10 @@ https://github.com/LuisBarahonaMX
 
 ## Repository
 
-https://github.com/LuisBarahonaMX/buscaqroo
+https://github.com/LuisBarahonaMX/TRANSAPP-Asistente-de-leyes-de-transito-Qroo
 
 ---
 
-## BuscaQroo
+## TRANSAPP
 
-**Making public and institutional information easier to find, understand and use.**
+**Artificial intelligence applied to make traffic regulations easier to find, understand and consult.**
